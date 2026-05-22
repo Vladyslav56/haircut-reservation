@@ -1,12 +1,11 @@
 import { useState } from 'react'
-import { fetchBookingsByDate, createBooking } from '../services/bookings'
+import { fetchBookingsByDate, createBooking } from '../api/bookings'
 
-export const useBookings = () => {
+export default function useBookings() {
   const [bookings, setBookings] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  // Вызывается когда пользователь выбрал мастера и дату
   const getBookings = async (employeeId, date) => {
     setLoading(true)
     try {

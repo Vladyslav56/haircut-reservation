@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchEmployees } from '../api/employees'
 
-export const useEmployees = () => {
+export default function useEmployees() {
   const [employees, setEmployees] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)

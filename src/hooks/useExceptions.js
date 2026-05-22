@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchExceptionsByEmployee } from '../services/exceptions'
 
-export const useExceptions = () => {
+export default function useExceptions() {
   const [exceptions, setExceptions] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)

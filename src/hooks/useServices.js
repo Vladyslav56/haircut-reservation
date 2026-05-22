@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchServices } from '../api/services'
 
-export const useServices = () => {
+export default function useServices() {
   const [services, setServices] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
