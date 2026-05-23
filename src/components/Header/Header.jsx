@@ -6,7 +6,7 @@ export default function Header() {
           <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
             <span className="text-black text-sm">✂️</span>
           </div>
-          <h1 className="font-bold text-lg tracking-tight">Premium Heircut</h1>
+          <h1 className="font-bold text-lg tracking-tight">Premium Haircut</h1>
         </div>
         <a
           href="https://instagram.com"
