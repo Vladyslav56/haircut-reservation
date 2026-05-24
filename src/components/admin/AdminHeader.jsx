@@ -1,3 +1,4 @@
+// Admin top navigation bar with section links and sign-out button
 import { NavLink } from 'react-router-dom'
 
 export default function AdminHeader({ onLogout }) {

@@ -1,3 +1,4 @@
+// Firebase Auth helpers: email/password login and logout
 import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import { auth } from '../firebase'
 

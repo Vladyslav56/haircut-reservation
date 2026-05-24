@@ -1,3 +1,4 @@
+// Step 2: shows only employees who offer ALL selected services, with total price preview
 import { useData } from '../../context/DataContext'
 
 export default function EmployeeStep({
@@ -55,13 +56,28 @@ export default function EmployeeStep({
                     : 'border-[#2a2a2a] bg-[#141414] hover:border-gray-500'
                 }`}
             >
-              <div>
-                <p className="font-medium">{employee.name}</p>
-                <p
-                  className={`text-xs mt-0.5 ${isSelected ? 'text-gray-500' : 'text-gray-500'}`}
-                >
-                  {employee.level}
-                </p>
+              <div className="flex items-center gap-6">
+                {employee.photo ? (
+                  <img
+                    src={employee.photo}
+                    alt={employee.name}
+                    className="w-10 h-10 rounded-full object-cover shrink-0"
+                  />
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-[#2a2a2a] flex items-center justify-center shrink-0">
+                    <span className="text-sm text-[#888]">
+                      {employee.name?.[0]?.toUpperCase() ?? '?'}
+                    </span>
+                  </div>
+                )}
+                <div>
+                  <p className="font-medium">{employee.name}</p>
+                  <p
+                    className={`text-xs mt-0.5 ${isSelected ? 'text-gray-500' : 'text-gray-500'}`}
+                  >
+                    {employee.level}
+                  </p>
+                </div>
               </div>
               <p className="font-medium text-sm">
                 from {getTotalPrice(employee)} Kč

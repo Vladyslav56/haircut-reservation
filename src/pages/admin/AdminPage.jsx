@@ -1,3 +1,4 @@
+// Admin layout: shows AdminLogin when unauthenticated, otherwise renders header + nested route
 import { Outlet } from 'react-router-dom'
 import AdminLogin from '../../components/admin/AdminLogin'
 import AdminHeader from '../../components/admin/AdminHeader'

@@ -1,3 +1,4 @@
+// Step 4: collects client name/email/phone, submits the full booking, shows confirmation screen
 import { useState } from 'react'
 import useBookings from '../../hooks/useBookings'
 

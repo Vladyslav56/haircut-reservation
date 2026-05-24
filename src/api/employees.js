@@ -1,3 +1,4 @@
+// Firestore CRUD for the 'employees' collection
 import {
   collection,
   getDocs,

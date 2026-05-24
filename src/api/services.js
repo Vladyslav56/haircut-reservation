@@ -1,3 +1,4 @@
+// Firestore CRUD for the 'services' collection
 import {
   collection,
   getDocs,

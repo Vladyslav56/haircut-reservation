@@ -1,3 +1,4 @@
+// Firestore CRUD for the 'bookings' collection
 import {
   collection,
   getDocs,

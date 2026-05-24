@@ -1,5 +1,7 @@
-import { useState } from 'react'
+// Step 3: shows next 30 working days (minus exception dates), loads time slots on date pick
+import { useEffect, useState } from 'react'
 import useBookings from '../../hooks/useBookings'
+import useExceptions from '../../hooks/useExceptions'
 import {
   generateSlots,
   getDayKey,
@@ -21,14 +23,23 @@ export default function DateTimeStep({
   const [loadingSlots, setLoadingSlots] = useState(false)
 
   const { getBookings } = useBookings()
+  const { exceptions, getExceptions } = useExceptions()
+
+  useEffect(() => {
+    getExceptions(employee.id)
+  }, [employee.id])
 
   const totalDuration = selectedServices.reduce((sum, s) => sum + s.duration, 0)
+
+  const exceptionDates = new Set(exceptions.map((e) => e.date))
 
   const availableDates = Array.from({ length: 30 }, (_, i) => {
     const date = new Date()
     date.setDate(date.getDate() + i + 1)
     return date.toISOString().split('T')[0]
-  }).filter((date) => isEmployeeWorkingDay(employee, date))
+  })
+    .filter((date) => isEmployeeWorkingDay(employee, date))
+    .filter((date) => !exceptionDates.has(date))
 
   const handleDateSelect = async (date) => {
     setSelectedDate(date)

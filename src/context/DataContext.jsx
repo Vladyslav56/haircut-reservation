@@ -1,3 +1,4 @@
+// Global read-only context providing { services, employees, loading, error } to the whole app
 import { createContext, useContext } from 'react'
 import useServices from '../hooks/useServices'
 import useEmployees from '../hooks/useEmployees'

@@ -1,3 +1,4 @@
+// Step 1: multi-select service picker grouped by category; sticky continue bar shows selection count
 import { useData } from '../../context/DataContext'
 
 const CATEGORY_LABELS = {

@@ -1,3 +1,4 @@
+// Public booking page: site header + multi-step booking wizard
 import { useData } from '../context/DataContext'
 import BookingWizard from '../components/booking/BookingWizard'
 import Header from '../components/Header/Header'

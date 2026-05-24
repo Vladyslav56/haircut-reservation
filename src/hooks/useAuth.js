@@ -1,3 +1,4 @@
+// Tracks Firebase auth state and exposes login/logout handlers
 import { useState, useEffect } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../firebase'

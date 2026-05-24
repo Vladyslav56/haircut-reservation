@@ -1,3 +1,4 @@
+// Full-screen email/password login form shown when no admin user is authenticated
 import { useState } from 'react'
 import useAuth from '../../hooks/useAuth'
 

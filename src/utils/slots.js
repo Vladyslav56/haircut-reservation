@@ -1,3 +1,4 @@
+// Slot generation helpers for the booking wizard and admin forms
 const toMin = (time) => {
   const [h, m] = time.split(':').map(Number)
   return h * 60 + m
@@ -11,11 +12,14 @@ const toTime = (min) => {
   return `${h}:${m}`
 }
 
+// Returns available "HH:MM" start times stepping every 30 min within working hours,
+// skipping any window that overlaps an existing booking
 export const generateSlots = (workStart, workEnd, duration, bookings) => {
   const start = toMin(workStart)
   const end = toMin(workEnd)
   const step = 30
 
+  // Build list of busy intervals [start, end) in minutes
   const busy = bookings.map((b) => ({
     start: toMin(b.timeStart),
     end: toMin(b.timeStart) + b.totalDuration,
@@ -25,6 +29,7 @@ export const generateSlots = (workStart, workEnd, duration, bookings) => {
 
   for (let t = start; t + duration <= end; t += step) {
     const slotEnd = t + duration
+    // Slot is free if it doesn't overlap any busy interval
     const isFree = busy.every((b) => t >= b.end || slotEnd <= b.start)
     if (isFree) slots.push(toTime(t))
   }

@@ -1,3 +1,4 @@
+// Booking state with per-employee/date fetch and full admin CRUD
 import { useState } from 'react'
 import {
   fetchBookingsByDate,

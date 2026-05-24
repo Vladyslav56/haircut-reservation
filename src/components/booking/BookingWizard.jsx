@@ -1,3 +1,4 @@
+// 4-step booking wizard: 1 services → 2 employee → 3 date/time → 4 client info
 import { useState } from 'react'
 import ServicesStep from './ServicesStep'
 import EmployeeStep from './EmployeeStep'

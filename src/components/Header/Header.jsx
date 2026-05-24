@@ -1,3 +1,4 @@
+// Public site header with salon name and Instagram link
 export default function Header() {
   return (
     <header className="bg-[#141414] border-b border-[#2a2a2a] mb-8 sticky top-0 z-10 backdrop-blur-sm">

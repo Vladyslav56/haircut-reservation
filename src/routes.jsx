@@ -1,3 +1,4 @@
+// All app routes: / → booking wizard, /admin/* → protected admin pages
 import { Routes, Route, Navigate } from 'react-router-dom'
 import BookingPage from './pages/BookingPage'
 import AdminPage from './pages/admin/AdminPage'
