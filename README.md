@@ -18,7 +18,7 @@ Stavový management je řešen kombinací lokálních custom hooků (`useBooking
 
 - Node.js ≥ 18
 - npm ≥ 9
-- Soubor .env, který zaslal e-mailem
+- Údaje pro soubor .env, které byly zaslány e-mailem.
 
 ### Postup
 
@@ -28,7 +28,8 @@ cd haircut-reservation
 npm install
 ```
 
-Přidejte do projektových souborů soubor .env, který byl zaslán e-mailem.
+Přejmenujte .env.example na .env.
+Přidejte tam údaje, které byly zaslány e-mailem.
 
 ```bash
 npm run dev
